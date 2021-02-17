@@ -2,8 +2,30 @@
 
 namespace MoodAnalyserNameSpace
 {
-    class Program
-    { 
+    public class MoodAnalyserClass
+    {
+        string message;
+
+        public MoodAnalyserClass(string message)
+        {
+            this.message = message;
+        }
+        public MoodAnalyserClass()
+        {
+
+        }
+
+        public string MoodAnalyserMethod(string message)
+        {
+
+
+            if (message.ToLower().Contains("sad"))
+                return "SAD";
+            else
+                return "HAPPY";
+
+
+        }
 
 
         static void Main(string[] args)
