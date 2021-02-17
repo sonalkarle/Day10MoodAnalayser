@@ -1,5 +1,9 @@
 using NUnit.Framework;
 using MoodAnalyserNameSpace;
+<<<<<<< HEAD
+=======
+
+>>>>>>> UC2_HandleException
 namespace MoodAnalyserTest
 {
     public class Tests
@@ -31,6 +35,19 @@ namespace MoodAnalyserTest
             string actual = moodAnalyser.MoodAnalyserMethod(message);
             Assert.AreEqual(expected, actual);
 
+<<<<<<< HEAD
+=======
+        }
+        [Test]
+        //TC2: Handle Null Exception
+
+        public void Handle_Null_Exception()
+        {
+            string expected = "Invalid";
+            string actual = moodAnalyser.MoodAnalyserMethod(null);
+            Assert.AreEqual(expected, actual);
+
+>>>>>>> UC2_HandleException
         }
       
        

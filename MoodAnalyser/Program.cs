@@ -17,13 +17,18 @@ namespace MoodAnalyserNameSpace
 
         public string MoodAnalyserMethod(string message)
         {
+            try
+            {
 
-
-            if (message.ToLower().Contains("sad"))
-                return "SAD";
-            else
-                return "HAPPY";
-
+                if (message.ToLower().Contains("sad"))
+                    return "SAD";
+                else
+                    return "HAPPY";
+            }
+            catch(NullReferenceException)
+            {
+                return "Invalid";
+            }
 
         }
 
