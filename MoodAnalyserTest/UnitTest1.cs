@@ -1,9 +1,6 @@
 using NUnit.Framework;
 using MoodAnalyserNameSpace;
-<<<<<<< HEAD
-=======
 
->>>>>>> UC2_HandleException
 namespace MoodAnalyserTest
 {
     public class Tests
@@ -35,8 +32,6 @@ namespace MoodAnalyserTest
             string actual = moodAnalyser.MoodAnalyserMethod(message);
             Assert.AreEqual(expected, actual);
 
-<<<<<<< HEAD
-=======
         }
         [Test]
         //TC2: Handle Null Exception
@@ -47,10 +42,42 @@ namespace MoodAnalyserTest
             string actual = moodAnalyser.MoodAnalyserMethod(null);
             Assert.AreEqual(expected, actual);
 
->>>>>>> UC2_HandleException
+
         }
-      
-       
+        // TU3.1 Given Null mood should throw moodAnalyser exception
         
+        [Test]
+        public void GivenMessageWhenNullUsingCustomExceptionShouldReturnNullMood()
+        {
+            string message = null;
+            try
+            {
+                moodAnalyser = new MoodAnalyserClass(message);
+                string result = moodAnalyser.MoodAnalyseNullAndEmpty();
+            }
+            catch (MoodAnalyserCustomException exception)
+            {
+                Assert.AreEqual("Mood should not be null", exception.Message);
+            }
+        }
+        
+        // 3.2 given empty mood shoud throws moodAnalyser exception
+        
+        [Test]
+        public void GivenMessageWhenEmptyUsingCustomExceptionShouldReturnEmptyMood()
+        {
+            string message = "";
+            try
+            {
+                moodAnalyser = new MoodAnalyserClass(message);
+                string result = moodAnalyser.MoodAnalyseNullAndEmpty();
+            }
+            catch (MoodAnalyserCustomException exception)
+            {
+                Assert.AreEqual("Mood should not be empty", exception.Message);
+            }
+        }
+
+
     }
 }
